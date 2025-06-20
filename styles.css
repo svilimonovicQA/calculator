@@ -1,0 +1,121 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background: linear-gradient(to right, #00aaff, #00ff6c);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  font-family: Arial, sans-serif;
+}
+
+.calculator {
+  background-color: rgba(255, 255, 255, 0.9);
+  border-radius: 10px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+  padding: 20px;
+  width: 100%;
+  max-width: 400px;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-gap: 10px;
+}
+
+.display {
+  grid-column: 1 / -1;
+  background-color: #333;
+  padding: 20px;
+  border-radius: 5px;
+  margin-bottom: 10px;
+  text-align: right;
+  word-wrap: break-word;
+  word-break: break-all;
+}
+
+.previous-operand {
+  color: rgba(255, 255, 255, 0.75);
+  font-size: 1.2rem;
+  min-height: 1.5rem;
+}
+
+.current-operand {
+  color: white;
+  font-size: 2rem;
+  min-height: 2.5rem;
+}
+
+button {
+  font-size: 1.5rem;
+  padding: 15px;
+  border: none;
+  background-color: #f0f0f0;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.2s, transform 0.1s;
+}
+
+button:hover {
+  background-color: #e0e0e0;
+}
+
+button:active {
+  transform: scale(0.95);
+}
+
+button[data-operation] {
+  background-color: #ffb700;
+  color: white;
+}
+
+button[data-operation]:hover {
+  background-color: #ff9500;
+}
+
+button[data-equals] {
+  background-color: #2196f3;
+  color: white;
+}
+
+button[data-equals]:hover {
+  background-color: #1976d2;
+}
+
+button[data-action="clear"],
+button[data-action="delete"] {
+  background-color: #ff5252;
+  color: white;
+}
+
+button[data-action="clear"]:hover,
+button[data-action="delete"]:hover {
+  background-color: #f44336;
+}
+
+.span-two {
+  grid-column: span 2;
+}
+
+@media (max-width: 400px) {
+  .calculator {
+    padding: 10px;
+  }
+
+  button {
+    font-size: 1.2rem;
+    padding: 10px;
+  }
+
+  .current-operand {
+    font-size: 1.5rem;
+  }
+
+  .previous-operand {
+    font-size: 1rem;
+  }
+}
